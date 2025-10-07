@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Details - MACreative</title>
+  <meta name="description" content="Detail portfolio project dari MACreative digital agency.">
+  
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/vendor/meanmenu.min.css">
+  <link rel="stylesheet" href="assets/vendor/magnific-popup.css">
+  <link rel="stylesheet" href="assets/vendor/animate.min.css">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="body-wrapper dark body-creative-agency font-heading-sequelsans-romanbody">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="container" class="container-preloader">
+      <div class="animation-preloader">
+        <div class="spinner"></div>
+      </div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+
+  <!-- Side toggle -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html"><img src="assets/imgs/logo/logo-3.png" alt="site logo"></a>
+          </div>
+          <button id="side-info-close" class="side-info-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="offset-button">
+          <a href="404.html" class="rr-btn">
+            <span class="btn-wrap">
+              <span class="text-one">Let's Talk</span>
+              <span class="text-two">Let's Talk</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact US</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="text">3891 Ranchview Dr. Richardson</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:mtvtdart@gmail.com">mtvtdart@gmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="http://wa.me/+6282230394861">Whatsapp</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
+
+  <!-- Header -->
+  <header class="header-area">
+    <div class="header-main">
+      <div class="container large">
+        <div class="header-area__inner">
+          <div class="header__logo">
+            <a href="index.html"><img src="assets/imgs/logo/logo-light.png" class="normal-logo" alt="Site Logo"></a>
+          </div>
+          <div class="header__nav">
+            <nav class="main-menu">
+              <ul>
+                <li><a href="index.html#heroheader">Home</a></li>
+                <li><a href="index.html#aboutus">About Us</a></li>
+                <li><a href="index.html#Service">Service</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="404.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__button">
+            <a href="404.html" class="rr-btn hover-bg-theme">
+              <span class="btn-wrap">
+                <span class="text-one">Let’s Talk</span>
+                <span class="text-two">Let’s Talk</span>
+              </span>
+            </a>
+          </div>
+          <div class="header__navicon d-xl-none">
+            <button class="side-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="has-smooth" id="has_smooth"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div>
+        <main>
+          <!-- Portfolio Detail Section (dinamis) -->
+          <section class="portfolio-detail">
+            <div class="container large">
+              <div class="portfolio-header">
+                <h1 id="portfolio-title" class="section-title"></h1>
+                <div id="portfolio-meta" class="meta">
+                  <!-- Meta akan dimuat di sini -->
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-overview">
+                  <h2>Overview</h2>
+                  <p id="portfolio-description"></p>
+                  <ul id="portfolio-services" class="services-list">
+                    <!-- Services akan dimuat di sini -->
+                  </ul>
+                </div>
+                <div id="portfolio-images" class="portfolio-images">
+                  <!-- Gambar utama dan tambahan akan dimuat di sini -->
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer-area-2">
+          <div class="container large">
+            <div class="footer-widget-wrapper-box">
+              <div class="footer-widget-wrapper">
+                <div class="footer-widget-box newsletter">
+                  <form action="#" class="subscribe-form">
+                    <div class="input-field">
+                      <input type="email" placeholder="Enter your email">
+                      <button type="submit" class="subscribe-btn"><img src="assets/imgs/icon/icon-1.webp" alt="image"></button>
+                    </div>
+                  </form>
+                  <div class="subscription-text">
+                    <div class="text-wrapper">
+                      <p class="text">Contact us for new project <a href="contact.html">Privacy Policy</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-widget-box">
+                  <h2 class="title">Company</h2>
+                  <ul class="footer-nav-list">
+                    <li><a href="contact.html">Agency</a></li>
+                    <li><a href="contact.html">Solutions</a></li>
+                    <li><a href="contact.html">Community</a></li>
+                    <li><a href="contact.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="footer-widget-box">
+                  <h2 class="title">Social</h2>
+                  <ul class="footer-nav-list">
+                    <li><a href="404.html">Dribbble</a></li>
+                    <li><a href="https://www.instagram.com/macreative___/">Instagram</a></li>
+                  </ul>
+                </div>
+                <div class="footer-widget-box">
+                  <h2 class="title">Marketplace</h2>
+                  <ul class="footer-nav-list">
+                    <li><a href="https://elements.envato.com/user/MACreative_">Envato</a></li>
+                    <li><a href="404.html">Canva</a></li>
+                    <li><a href="404.html">Creative Market</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="copyright-area">
+            <div class="copyright-area-inner">
+              <div class="copyright-text">
+                <p class="text">© 2025 MACreative. All rights reserved</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vendor/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/ScrollToPlugin.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/TextPlugin.js"></script>
+  <script src="assets/vendor/customEase.js"></script>
+  <script src="assets/vendor/Flip.min.js"></script>
+  <script src="assets/vendor/jquery.meanmenu.min.js"></script>
+  <script src="assets/vendor/backToTop.js"></script>
+  <script src="assets/vendor/matter.js"></script>
+  <script src="assets/vendor/throwable.js"></script>
+  <script src="assets/js/magiccursor.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Load Data Portfolio -->
+  <script src="assets/js/portfolio-data.js"></script>
+
+  <!-- Script untuk Memuat Konten Dinamis -->
+  <script>
+    $(document).ready(function() {
+      // Ambil parameter dari URL (misalnya ?id=3 atau ?slug=saudi-venture-capital)
+      const urlParams = new URLSearchParams(window.location.search);
+      const portfolioId = parseInt(urlParams.get('id'));
+      const portfolioSlug = urlParams.get('slug');
+
+      // Cari portfolio berdasarkan id atau slug
+      let portfolio = portfolioData.find(item => item.id === portfolioId || item.slug === portfolioSlug);
+
+      if (!portfolio) {
+        // Jika tidak ditemukan, redirect ke 404
+        window.location.href = '404.html';
+        return;
+      }
+
+      // Update judul halaman
+      document.title = portfolio.title + ' - MACreative Portfolio Details';
+
+      // Tampilkan judul
+      $('#portfolio-title').text(portfolio.title);
+
+      // Tampilkan meta (author, category, year)
+      $('#portfolio-meta').html(`
+        <span>By ${portfolio.author}</span>
+        <span>${portfolio.category}</span>
+        <span>${portfolio.year}</span>
+      `);
+
+      // Tampilkan deskripsi
+      $('#portfolio-description').text(portfolio.description);
+
+      // Tampilkan services sebagai list
+      let servicesHtml = '';
+      portfolio.services.forEach(service => {
+        servicesHtml += `<li>${service}</li>`;
+      });
+      $('#portfolio-services').html(servicesHtml);
+
+      // Tampilkan gambar (gambar pertama sebagai utama, sisanya di gallery)
+      let imagesHtml = `<img src="${portfolio.images[0]}" alt="${portfolio.title}" class="main-img">`;
+      if (portfolio.images.length > 1) {
+        imagesHtml += '<div class="swiper portfolio-swiper"><div class="swiper-wrapper">';
+        portfolio.images.slice(1).forEach(img => {
+          imagesHtml += `<div class="swiper-slide"><img src="${img}" alt="${portfolio.title}"></div>`;
+        });
+        imagesHtml += '</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>';
+      }
+      $('#portfolio-images').html(imagesHtml);
+
+      // Inisialisasi Swiper jika ada gallery
+      if (portfolio.images.length > 1) {
+        new Swiper('.portfolio-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
