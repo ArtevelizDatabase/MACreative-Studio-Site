@@ -6623,7 +6623,7 @@ video.video-area {
 }
 @media (max-width: 575px) {
   .about-area-2 .section-content .year-since {
-    font-size: 60px;
+    font-size: 40px;
     line-height: normal;
   }
 }
