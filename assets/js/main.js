@@ -126,8 +126,14 @@
     $(".offcanvas-overlay").removeClass("overlay-open");
   });
   $(".side-toggle").on("click", function () {
-    $(".side-info").addClass("info-open");
-    $(".offcanvas-overlay").addClass("overlay-open");
+    // Toggle functionality - jika sudah terbuka, tutup; jika tertutup, buka
+    if ($(".side-info").hasClass("info-open")) {
+      $(".side-info").removeClass("info-open");
+      $(".offcanvas-overlay").removeClass("overlay-open");
+    } else {
+      $(".side-info").addClass("info-open");
+      $(".offcanvas-overlay").addClass("overlay-open");
+    }
   });
 
   $(window).scroll(function () {
@@ -258,21 +264,41 @@
   }
 
   // client slider 
-  if (document.querySelectorAll(".client-slider-active").length > 0) {
-    if ('.client-slider-active') {
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM loaded, checking for client slider elements...");
+    const clientSliderElements = document.querySelectorAll(".client-slider-active");
+    console.log("Found client slider elements:", clientSliderElements.length);
+    
+    if (clientSliderElements.length > 0) {
+      console.log("Initializing Swiper for client slider...");
+      
+      // Check if Swiper is available
+      if (typeof Swiper === 'undefined') {
+        console.error("Swiper library not loaded!");
+        return;
+      }
+      
       var client_slider_active = new Swiper(".client-slider-active", {
-        slidesPerView: 'auto',
-        loop: true,
-        autoplay: true,
-        spaceBetween: 0,
-        speed: 5000,
-        allowTouchMove: false,
-        autoplay: {
-          delay: 1,
-        },
-      });
+           slidesPerView: 'auto',
+           loop: true,
+           spaceBetween: 0,
+           speed: 3000,
+           allowTouchMove: false,
+           autoplay: {
+             delay: 0,
+             disableOnInteraction: false,
+             pauseOnMouseEnter: false,
+           },
+           freeMode: {
+             enabled: true,
+             momentum: false,
+           },
+         });
+        console.log("Swiper initialized successfully:", client_slider_active);
+    } else {
+      console.log("No client slider elements found!");
     }
-  }
+  });
 
   // GSAP Fade Animation 
   let fadeArray_items = document.querySelectorAll(".fade-anim");
@@ -2285,6 +2311,8 @@
       stagger: 0.05
     });
   }
+
+
 
 })(jQuery);
 
