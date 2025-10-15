@@ -6840,20 +6840,20 @@ video.video-area {
   color: var(--white);
   gap: 12px;
   padding: 14px 28px;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 .rr-btn.more-portfolio-btn::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--white);
   height: 100%;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s ease;
+  background-color: #FFA500; /* orange overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 .rr-btn.more-portfolio-btn:hover::before,
 .rr-btn.more-portfolio-btn:focus::before {
-  transform: scaleX(1);
+  opacity: 0.15; /* subtle fade, no swipe */
 }
 .dark .rr-btn.more-portfolio-btn {
   color: var(--white);
@@ -6861,10 +6861,6 @@ video.video-area {
 }
 .dark .rr-btn.more-portfolio-btn .btn-wrap .text-one {
   color: var(--white);
-}
-.dark .rr-btn.more-portfolio-btn:hover .btn-wrap .text-two,
-.dark .rr-btn.more-portfolio-btn:focus .btn-wrap .text-two {
-  color: var(--black);
 }
 .rr-btn.more-portfolio-btn .btn-icon {
   width: 48px;
@@ -6875,25 +6871,25 @@ video.video-area {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 .rr-btn.more-portfolio-btn .btn-icon i {
   font-size: 18px;
   color: var(--white);
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 .rr-btn.more-portfolio-btn:hover .btn-icon,
 .rr-btn.more-portfolio-btn:focus .btn-icon {
-  background-color: var(--white);
-  border-color: var(--white);
+  background-color: rgba(255, 165, 0, 0.12);
+  border-color: #FFA500;
 }
 .rr-btn.more-portfolio-btn:hover .btn-icon i,
 .rr-btn.more-portfolio-btn:focus .btn-icon i {
-  transform: translateX(4px);
+  transform: none;
 }
 .rr-btn.more-portfolio-btn:hover .btn-icon i,
 .rr-btn.more-portfolio-btn:focus .btn-icon i {
-  color: var(--black);
+  color: #FFA500;
 }
 
 /* Keep text static; use single label */
@@ -6902,7 +6898,7 @@ video.video-area {
 }
 .rr-btn.more-portfolio-btn:hover .btn-wrap .text-one,
 .rr-btn.more-portfolio-btn:focus .btn-wrap .text-one {
-  color: var(--black);
+  color: #FFA500;
 }
 
 /* Responsive alignment and sizing */
@@ -19097,26 +19093,22 @@ body:has(.header-area.header-sticky) {
     }
 }
 
-/* Override: Fade-only hover for rr-btn spans (no swipe)
-   Note: Restrict to :hover only to avoid hiding labels on :focus
-   (e.g., after returning from external link, browsers keep focus). */
+/* Override: Fade-only hover for rr-btn spans (no swipe) */
 .rr-btn .btn-wrap .text-two {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   opacity: 0;
 }
-.rr-btn:hover .btn-wrap .text-one {
+.rr-btn:hover .btn-wrap .text-one,
+.rr-btn:focus .btn-wrap .text-one {
   opacity: 0;
   transform: none;
 }
-.rr-btn:hover .btn-wrap .text-two {
+.rr-btn:hover .btn-wrap .text-two,
+.rr-btn:focus .btn-wrap .text-two {
   opacity: 1;
 }
-
-/* Preserve content visibility when button is focused */
-.rr-btn:focus .btn-wrap .text-one { opacity: 1; }
-.rr-btn:focus .btn-wrap .text-two { opacity: 0; }
 
 /* Global link hover: orange with smooth transition */
 a {
