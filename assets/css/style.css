@@ -19097,22 +19097,26 @@ body:has(.header-area.header-sticky) {
     }
 }
 
-/* Override: Fade-only hover for rr-btn spans (no swipe) */
+/* Override: Fade-only hover for rr-btn spans (no swipe)
+   Note: Restrict to :hover only to avoid hiding labels on :focus
+   (e.g., after returning from external link, browsers keep focus). */
 .rr-btn .btn-wrap .text-two {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   opacity: 0;
 }
-.rr-btn:hover .btn-wrap .text-one,
-.rr-btn:focus .btn-wrap .text-one {
+.rr-btn:hover .btn-wrap .text-one {
   opacity: 0;
   transform: none;
 }
-.rr-btn:hover .btn-wrap .text-two,
-.rr-btn:focus .btn-wrap .text-two {
+.rr-btn:hover .btn-wrap .text-two {
   opacity: 1;
 }
+
+/* Preserve content visibility when button is focused */
+.rr-btn:focus .btn-wrap .text-one { opacity: 1; }
+.rr-btn:focus .btn-wrap .text-two { opacity: 0; }
 
 /* Global link hover: orange with smooth transition */
 a {
