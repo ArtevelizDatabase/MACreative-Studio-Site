@@ -6833,6 +6833,104 @@ video.video-area {
   }
 }
 
+/* More Portfolio custom button */
+.rr-btn.more-portfolio-btn {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  gap: 12px;
+  padding: 14px 28px;
+}
+.rr-btn.more-portfolio-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--white);
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.rr-btn.more-portfolio-btn:hover::before,
+.rr-btn.more-portfolio-btn:focus::before {
+  transform: scaleX(1);
+}
+.dark .rr-btn.more-portfolio-btn {
+  color: var(--white);
+  border-color: var(--white);
+}
+.dark .rr-btn.more-portfolio-btn .btn-wrap .text-one {
+  color: var(--white);
+}
+.dark .rr-btn.more-portfolio-btn:hover .btn-wrap .text-two,
+.dark .rr-btn.more-portfolio-btn:focus .btn-wrap .text-two {
+  color: var(--black);
+}
+.rr-btn.more-portfolio-btn .btn-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.rr-btn.more-portfolio-btn .btn-icon i {
+  font-size: 18px;
+  color: var(--white);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.rr-btn.more-portfolio-btn:hover .btn-icon,
+.rr-btn.more-portfolio-btn:focus .btn-icon {
+  background-color: var(--white);
+  border-color: var(--white);
+}
+.rr-btn.more-portfolio-btn:hover .btn-icon i,
+.rr-btn.more-portfolio-btn:focus .btn-icon i {
+  transform: translateX(4px);
+}
+.rr-btn.more-portfolio-btn:hover .btn-icon i,
+.rr-btn.more-portfolio-btn:focus .btn-icon i {
+  color: var(--black);
+}
+
+/* Keep text static; use single label */
+.rr-btn.more-portfolio-btn .btn-wrap .text-two {
+  display: none;
+}
+.rr-btn.more-portfolio-btn:hover .btn-wrap .text-one,
+.rr-btn.more-portfolio-btn:focus .btn-wrap .text-one {
+  color: var(--black);
+}
+
+/* Responsive alignment and sizing */
+@media only screen and (max-width: 1199px) {
+  .rr-btn.more-portfolio-btn {
+    padding: 12px 22px;
+    gap: 10px;
+  }
+  .rr-btn.more-portfolio-btn .btn-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .work-area-2 .works-wrapper-head .total-count {
+    text-align: center;
+  }
+  .rr-btn.more-portfolio-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+  .rr-btn.more-portfolio-btn .btn-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
 .works-wrapper-2 {
   display: grid;
   gap: 98px 20px;
@@ -18997,4 +19095,44 @@ body:has(.header-area.header-sticky) {
     .footer-widget-box .footer-logo .normal-logo {
         max-width: 100px; /* Ukuran lebih kecil untuk mobile */
     }
+}
+
+/* Override: Fade-only hover for rr-btn spans (no swipe) */
+.rr-btn .btn-wrap .text-two {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.rr-btn:hover .btn-wrap .text-one,
+.rr-btn:focus .btn-wrap .text-one {
+  opacity: 0;
+  transform: none;
+}
+.rr-btn:hover .btn-wrap .text-two,
+.rr-btn:focus .btn-wrap .text-two {
+  opacity: 1;
+}
+
+/* Global link hover: orange with smooth transition */
+a {
+  transition: color 0.3s ease-in-out;
+}
+a:hover {
+  color: #FFA500;
+}
+
+/* Ensure header nav links also use orange on hover */
+.header-area .main-menu li a:hover,
+.header-area-2 .main-menu li a:hover,
+.header-area-3 .main-menu li a:hover {
+  color: #FFA500;
+}
+
+/* Global span hover: orange with fade-in, without swipe */
+span {
+  transition: color 0.5s ease-in-out;
+}
+span:hover {
+  color: #FFA500;
 }

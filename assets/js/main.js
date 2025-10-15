@@ -107,7 +107,7 @@
 
   if (device_width > 767) {
     if (document.querySelector("#has_smooth").classList.contains("has-smooth")) {
-      const smoother = ScrollSmoother.create({
+      window.smoother = ScrollSmoother.create({
         smooth: 0.9,
         effects: device_width < 1025 ? false : true,
         smoothTouch: 0.1,
@@ -380,13 +380,38 @@
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth',
-        });
+        if (window.smoother && typeof window.smoother.scrollTo === 'function') {
+          window.smoother.scrollTo(targetElement, true);
+        } else if (typeof gsap !== 'undefined') {
+          gsap.to(window, { duration: 1, scrollTo: { y: targetElement } });
+        } else {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
+
+  function scrollToHashIfPresent() {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      const id = hash.substring(1);
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          if (window.smoother && typeof window.smoother.scrollTo === 'function') {
+            window.smoother.scrollTo(el, true);
+          } else if (typeof gsap !== 'undefined') {
+            gsap.to(window, { duration: 1, scrollTo: { y: el } });
+          } else {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 50);
+      }
+    }
+  }
+
+  window.addEventListener('load', scrollToHashIfPresent);
+  window.addEventListener('hashchange', scrollToHashIfPresent);
 
   mm.add("(min-width: 1024px)", () => {
     var pin_fixed = document.querySelector('.pin-element');
