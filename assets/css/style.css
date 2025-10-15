@@ -19102,7 +19102,7 @@ body:has(.header-area.header-sticky) {
 }
 .rr-btn:hover .btn-wrap .text-one,
 .rr-btn:focus .btn-wrap .text-one {
-  opacity: 0;
+  opacity: 1;
   transform: none;
 }
 .rr-btn:hover .btn-wrap .text-two,
@@ -19115,14 +19115,14 @@ a {
   transition: color 0.3s ease-in-out;
 }
 a:hover {
-  color: #FFA500;
+  color: #f97316;
 }
 
 /* Ensure header nav links also use orange on hover */
 .header-area .main-menu li a:hover,
 .header-area-2 .main-menu li a:hover,
 .header-area-3 .main-menu li a:hover {
-  color: #FFA500;
+  color: #f97316;
 }
 
 /* Global span hover: orange with fade-in, without swipe */
@@ -19130,5 +19130,5 @@ span {
   transition: color 0.5s ease-in-out;
 }
 span:hover {
-  color: #FFA500;
+  color: #f97316;
 }
